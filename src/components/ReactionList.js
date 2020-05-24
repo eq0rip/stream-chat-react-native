@@ -22,6 +22,7 @@ const TouchableWrapper = styled.View`
   z-index: 10;
   align-self: ${({ alignment }) =>
     alignment === 'left' ? 'flex-start' : 'flex-end'};
+${({ theme }) => theme.message.reactionList.touchableWrapper.css}
 `;
 
 const Container = styled.View`
