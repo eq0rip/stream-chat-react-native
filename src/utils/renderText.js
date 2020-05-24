@@ -1,5 +1,5 @@
 // import Markdown from '@stream-io/react-native-simple-markdown';
-import Markdown, { MarkdownIt } from 'react-native-markdown-display';
+import Markdown from 'react-native-markdown-display';
 import { truncate } from 'lodash-es';
 import anchorme from 'anchorme';
 import React from 'react';
