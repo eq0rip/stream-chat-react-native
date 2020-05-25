@@ -85,6 +85,12 @@ export class ReactionPickerWrapper extends React.PureComponent {
     const { alignment, offset } = this.props;
     if (this.messageContainer) {
       this.messageContainer.measureInWindow((x, y, width) => {
+        const leffft = x - 10 + offset.left;
+        const righttt =
+          Math.round(Dimensions.get('window').width) -
+          (x + width + offset.right);
+        console.log('--current alignment--', alignment);
+        console.log('--right  left--', { leffft, righttt });
         this.setState({
           rpTop: y - 60 + offset.top,
           rpLeft: alignment === 'left' ? x - 10 + offset.left : null,
