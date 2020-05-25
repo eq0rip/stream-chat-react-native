@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { TouchableOpacity, Dimensions } from 'react-native';
+import { TouchableOpacity, Dimensions, I18nManager } from 'react-native';
 
 import { ReactionPicker } from './ReactionPicker';
 import { emojiData } from '../utils';
@@ -89,12 +89,25 @@ export class ReactionPickerWrapper extends React.PureComponent {
         const righttt =
           Math.round(Dimensions.get('window').width) -
           (x + width + offset.right);
+        const isRtl = I18nManager.isRTL ? true : false;
         console.log('--current alignment--', alignment);
         console.log('--right  left--', { leffft, righttt });
         this.setState({
           rpTop: y - 60 + offset.top,
-          rpLeft: null,
-          rpRight: null,
+          rpLeft:
+            alignment === 'left' && isRtl
+              ? Math.round(Dimensions.get('window').width) -
+                (x + width + offset.right)
+              : alignment === 'left' && !isRtl
+              ? x - 10 + offset.left
+              : null,
+          rpRight:
+            alignment === 'right' && isRtl
+              ? x - 10 + offset.left
+              : alignment === 'right' && !isRtl
+              ? Math.round(Dimensions.get('window').width) -
+                (x + width + offset.right)
+              : null,
         });
       });
     }
