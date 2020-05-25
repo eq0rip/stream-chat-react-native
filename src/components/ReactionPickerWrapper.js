@@ -93,12 +93,8 @@ export class ReactionPickerWrapper extends React.PureComponent {
         console.log('--right  left--', { leffft, righttt });
         this.setState({
           rpTop: y - 60 + offset.top,
-          rpLeft: alignment === 'left' ? x - 10 + offset.left : null,
-          rpRight:
-            alignment === 'right'
-              ? Math.round(Dimensions.get('window').width) -
-                (x + width + offset.right)
-              : null,
+          rpLeft: null,
+          rpRight: null,
         });
       });
     }
