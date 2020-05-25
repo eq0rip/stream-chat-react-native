@@ -40,8 +40,7 @@ export const renderText = (message, styles) => {
     ...defaultMarkdownStyles,
     ...styles,
   };
-
-  return <Markdown styles={markdownStyles}>{newText} Namaste</Markdown>;
+  return <Markdown styles={markdownStyles}>{newText}</Markdown>;
 };
 
 const defaultMarkdownStyles = {
