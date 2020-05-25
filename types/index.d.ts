@@ -1038,6 +1038,7 @@ export interface ReactionListProps extends StyledComponentProps {
   ): string | number;
   visible: boolean;
   position: string;
+  isRtl: boolean;
   supportedReactions?: Array<{
     icon: string;
     id: string;
