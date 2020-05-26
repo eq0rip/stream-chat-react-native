@@ -141,7 +141,7 @@ export const ReactionList = themed(
         visible,
         alignment,
         supportedReactions,
-        isRtl,
+        // isRtl,
       } = this.props;
       return (
         <TouchableWrapper alignment={alignment} activeOpacity={1}>
@@ -156,23 +156,11 @@ export const ReactionList = themed(
             </ReactionCount>
           </Container>
           <ImageWrapper visible={visible}>
-            {alignment === 'left' && !isRtl ? (
+            {alignment === 'left' ? (
               <React.Fragment>
                 <LeftTail source={leftTail} />
                 <LeftCenter source={leftCenter} resizeMode="stretch" />
                 <LeftEnd source={leftEnd} />
-              </React.Fragment>
-            ) : alignment === 'left' && isRtl ? (
-              <React.Fragment>
-                <LeftEnd source={leftEnd} />
-                <LeftCenter source={leftCenter} resizeMode="stretch" />
-                <LeftTail source={leftTail} />
-              </React.Fragment>
-            ) : isRtl ? (
-              <React.Fragment>
-                <RightTail source={rightTail} />
-                <RightCenter source={rightCenter} resizeMode="stretch" />
-                <RightEnd source={rightEnd} />
               </React.Fragment>
             ) : (
               <React.Fragment>
