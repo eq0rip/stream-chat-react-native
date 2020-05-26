@@ -164,15 +164,15 @@ export const ReactionList = themed(
               </React.Fragment>
             ) : alignment === 'left' && isRtl ? (
               <React.Fragment>
-                <LeftTail source={leftTail} />
-                <LeftCenter source={leftCenter} resizeMode="stretch" />
-                <LeftEnd source={leftEnd} />
+                <RightTail source={rightTail} />
+                <RightCenter source={rightCenter} resizeMode="stretch" />
+                <RightEnd source={rightEnd} />
               </React.Fragment>
             ) : isRtl ? (
               <React.Fragment>
-                <RightEnd source={rightEnd} />
-                <RightCenter source={rightCenter} resizeMode="stretch" />
-                <RightTail source={rightTail} />
+                <LeftEnd source={leftEnd} />
+                <LeftCenter source={leftCenter} resizeMode="stretch" />
+                <LeftTail source={leftTail} />
               </React.Fragment>
             ) : (
               <React.Fragment>
