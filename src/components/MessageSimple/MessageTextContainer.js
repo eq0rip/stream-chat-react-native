@@ -5,6 +5,8 @@ import { renderText, capitalize } from '../../utils';
 import PropTypes from 'prop-types';
 
 const TextContainer = styled.View`
+  border-radius: ${({ theme }) =>
+    theme.message.content.textContainer.borderRadiusS};
   border-bottom-left-radius: ${({ theme, groupStyle }) =>
     groupStyle.indexOf('left') !== -1
       ? theme.message.content.textContainer.borderRadiusS
@@ -39,6 +41,8 @@ const TextContainer = styled.View`
     alignment === 'left' || type === 'error' || status === 'failed'
       ? theme.colors.messageBoxOrange
       : theme.colors.messageBoxPurple};
+  color: ${({ theme, alignment }) =>
+    alignment === 'left' ? theme.colors.textDark : theme.colors.textLight};
   ${({ theme }) => theme.message.content.textContainer.css}
 `;
 
