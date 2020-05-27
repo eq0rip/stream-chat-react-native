@@ -17,6 +17,8 @@ export const Colors = {
   textDark: 'rgba(0,0,0,1)',
   textGrey: 'rgba(0,0,0,0.5)',
   transparent: 'transparent',
+  messageBoxPurple: '#7E78CE',
+  messageBoxOrange: '#FBE7DD',
 };
 
 export const defaultTheme = {
