@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 const TextContainer = styled.View`
   border-radius: ${({ theme }) =>
-    theme.message.content.textContainer.borderRadiusS};
+    theme.message.content.textContainer.borderRadiusL};
   border-bottom-left-radius: ${({ theme, groupStyle }) =>
     groupStyle.indexOf('left') !== -1
       ? theme.message.content.textContainer.borderRadiusS
@@ -59,9 +59,11 @@ export const MessageTextContainer = withTheme((props) => {
     alignment + capitalize(hasAttachment ? 'bottom' : groupStyles[0]);
 
   if (!message.text) return false;
-  const markdownStyles = props.theme
+  const markdownStyless = props.theme
     ? props.theme.message.content.markdown
     : {};
+  const textColorMessage = alignment === 'left' ? 'white' : 'black';
+  const markdownStyles = { ...markdownStyless, color: textColorMessage };
   return (
     <React.Fragment>
       <TextContainer
