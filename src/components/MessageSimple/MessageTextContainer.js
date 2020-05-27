@@ -8,12 +8,12 @@ const TextContainer = styled.View`
   border-bottom-left-radius: ${({ theme, groupStyle }) =>
     groupStyle.indexOf('left') !== -1 &&
     (groupStyle !== 'leftMiddle' || groupStyle !== 'rightMiddle')
-      ? theme.message.content.textContainer.borderRadiusS
+      ? theme.message.content.textContainer.borderRadiusL
       : theme.message.content.textContainer.borderRadiusL};
   border-bottom-right-radius: ${({ theme, groupStyle }) =>
     groupStyle.indexOf('right') !== -1 &&
     (groupStyle !== 'leftMiddle' || groupStyle !== 'rightMiddle')
-      ? theme.message.content.textContainer.borderRadiusS
+      ? theme.message.content.textContainer.borderRadiusL
       : theme.message.content.textContainer.borderRadiusL};
   border-top-left-radius: ${({ theme, groupStyle }) =>
     groupStyle === 'leftBottom' || groupStyle === 'leftMiddle'
@@ -65,8 +65,9 @@ export const MessageTextContainer = withTheme((props) => {
   const textColorMessage = alignment === 'left' ? 'black' : 'white';
   const markdownStyles = {
     ...markdownStyless,
-    body: { color: textColorMessage },
+    text: { color: textColorMessage },
   };
+  console.log('--markdownstyle--', markdownStyles);
   return (
     <React.Fragment>
       <TextContainer
