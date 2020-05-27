@@ -17,11 +17,11 @@ const TextContainer = styled.View`
       : theme.message.content.textContainer.borderRadiusL};
   border-top-left-radius: ${({ theme, groupStyle }) =>
     groupStyle === 'leftBottom' || groupStyle === 'leftMiddle'
-      ? theme.message.content.textContainer.borderRadiusL
+      ? theme.message.content.textContainer.borderRadiusS
       : theme.message.content.textContainer.borderRadiusL};
   border-top-right-radius: ${({ theme, groupStyle }) =>
     groupStyle === 'rightBottom' || groupStyle === 'rightMiddle'
-      ? theme.message.content.textContainer.borderRadiusL
+      ? theme.message.content.textContainer.borderRadiusS
       : theme.message.content.textContainer.borderRadiusL};
   padding: 5px;
   padding-left: 8;
@@ -65,9 +65,15 @@ export const MessageTextContainer = withTheme((props) => {
   const textColorMessage = alignment === 'left' ? 'black' : 'white';
   const markdownStyles = {
     ...markdownStyless,
+    body: { color: 'red' },
     text: { color: textColorMessage },
+    heading: { color: 'purple' },
+    link: { color: 'yellow' },
+    span: { color: 'green' },
+    paragraph: { color: 'blue' },
   };
   console.log('--markdownstyle--', markdownStyles);
+  console.log('--markdownstyle--', !MessageText);
   return (
     <React.Fragment>
       <TextContainer
