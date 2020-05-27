@@ -40,10 +40,21 @@ export const renderText = (message, styles) => {
     ...defaultMarkdownStyles,
     ...styles,
   };
-  return <Markdown styles={markdownStyles}>{newText}</Markdown>;
+  console.log('---markdownstyles---', markdownStyles);
+  return (
+    <Markdown mergeStyle={true} styles={markdownStyles}>
+      {newText}
+    </Markdown>
+  );
 };
 
 const defaultMarkdownStyles = {
+  body: {
+    color: 'red',
+  },
+  text: {
+    color: 'yellow',
+  },
   link: {
     color: 'blue',
     textDecorationLine: 'underline',
@@ -60,5 +71,8 @@ const defaultMarkdownStyles = {
     padding: 3,
     paddingLeft: 5,
     paddingRight: 5,
+  },
+  paragraph: {
+    color: 'yellow',
   },
 };
