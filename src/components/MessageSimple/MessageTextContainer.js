@@ -5,8 +5,6 @@ import { renderText, capitalize } from '../../utils';
 import PropTypes from 'prop-types';
 
 const TextContainer = styled.View`
-  border-radius: ${({ theme }) =>
-    theme.message.content.textContainer.borderRadiusL};
   border-bottom-left-radius: ${({ theme, groupStyle }) =>
     groupStyle.indexOf('left') !== -1
       ? theme.message.content.textContainer.borderRadiusS
@@ -17,11 +15,11 @@ const TextContainer = styled.View`
       : theme.message.content.textContainer.borderRadiusL};
   border-top-left-radius: ${({ theme, groupStyle }) =>
     groupStyle === 'leftBottom' || groupStyle === 'leftMiddle'
-      ? theme.message.content.textContainer.borderRadiusS
+      ? theme.message.content.textContainer.borderRadiusL
       : theme.message.content.textContainer.borderRadiusL};
   border-top-right-radius: ${({ theme, groupStyle }) =>
     groupStyle === 'rightBottom' || groupStyle === 'rightMiddle'
-      ? theme.message.content.textContainer.borderRadiusS
+      ? theme.message.content.textContainer.borderRadiusL
       : theme.message.content.textContainer.borderRadiusL};
   padding: 5px;
   padding-left: 8;
@@ -62,8 +60,11 @@ export const MessageTextContainer = withTheme((props) => {
   const markdownStyless = props.theme
     ? props.theme.message.content.markdown
     : {};
-  const textColorMessage = alignment === 'left' ? 'white' : 'black';
-  const markdownStyles = { ...markdownStyless, color: textColorMessage };
+  const textColorMessage = alignment === 'left' ? 'black' : 'white';
+  const markdownStyles = {
+    ...markdownStyless,
+    body: { color: textColorMessage },
+  };
   return (
     <React.Fragment>
       <TextContainer
