@@ -105,7 +105,6 @@ export const ReactionPicker = themed(
         rpTop,
         rpRight,
         supportedReactions,
-        handleCustomAction,
       } = this.props;
 
       if (!reactionPickerVisible) return null;
