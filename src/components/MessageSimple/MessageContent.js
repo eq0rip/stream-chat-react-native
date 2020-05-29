@@ -372,6 +372,7 @@ class MessageContent extends React.PureComponent {
     readOnly: PropTypes.bool,
     /** Disables the message UI. Which means, message actions, reactions won't work. */
     disabled: PropTypes.bool,
+    handleCustomAction: PropTypes.func,
   };
 
   static defaultProps = {

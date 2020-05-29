@@ -51,6 +51,7 @@ export class ReactionPickerWrapper extends React.PureComponent {
     reactionPickerVisible: PropTypes.bool,
     openReactionPicker: PropTypes.func,
     style: PropTypes.any,
+    handleCustomAction: PropTypes.func,
   };
 
   static defaultProps = {

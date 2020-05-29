@@ -54,6 +54,7 @@ export const ReactionPicker = themed(
       hideReactionOwners: PropTypes.bool,
       reactionPickerVisible: PropTypes.bool,
       handleDismiss: PropTypes.func,
+      handleCustomAction: PropTypes.func,
       handleReaction: PropTypes.func,
       latestReactions: PropTypes.array,
       reactionCounts: PropTypes.object,
