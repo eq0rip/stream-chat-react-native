@@ -415,7 +415,6 @@ export const MessageSimple = themed(
         reactionPickerVisible: this.state.reactionPickerVisible,
         openReactionPicker: this.openReactionPicker,
         dismissReactionPicker: this.dismissReactionPicker,
-        handleCustomAction: this.handleCustomAction,
         alignment,
         groupStyles: hasReactions ? ['bottom'] : groupStyles,
       };

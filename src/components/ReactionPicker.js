@@ -111,7 +111,7 @@ export const ReactionPicker = themed(
       if (!reactionPickerVisible) return null;
 
       const position = {
-        marginTop: rpTop,
+        marginTop: rpTop - 65,
       };
 
       if (rpLeft) position.marginLeft = rpLeft;
@@ -138,6 +138,7 @@ export const ReactionPicker = themed(
                   alignItems: 'center',
                   height: 65,
                   width: '100%',
+                  backgroundColor: 'white',
                 }}
               >
                 <TouchableOpacity onPress={() => handleCustomAction('forward')}>
