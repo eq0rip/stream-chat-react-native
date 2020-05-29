@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Modal } from 'react-native';
+import { View, Modal, TouchableOpacity } from 'react-native';
 import { themed } from '../styles/theme';
 import PropTypes from 'prop-types';
 
@@ -130,6 +130,11 @@ export const ReactionPicker = themed(
               leftAlign={Boolean(rpLeft)}
               activeOpacity={1}
             >
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <TouchableOpacity onPress={() => alert('done')}>
+                  <Text>asdfjkkjf</Text>
+                </TouchableOpacity>
+              </View>
               <ContainerView
                 style={{
                   ...position,
