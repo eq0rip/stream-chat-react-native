@@ -9,6 +9,7 @@ import { emojiData } from '../utils';
 
 const Container = styled.TouchableOpacity`
   flex: 1;
+  margin-top: 60;
   align-items: ${({ leftAlign }) => (leftAlign ? 'flex-start' : 'flex-end')};
   ${({ theme }) => theme.message.reactionPicker.container.css}
 `;
@@ -132,7 +133,7 @@ export const ReactionPicker = themed(
               leftAlign={Boolean(rpLeft)}
               activeOpacity={1}
             >
-              <View
+              {/* <View
                 style={{
                   flexDirection: 'row',
                   alignItems: 'center',
@@ -147,7 +148,7 @@ export const ReactionPicker = themed(
                 <TouchableOpacity onPress={() => handleCustomAction('reply')}>
                   <Text>modallllll</Text>
                 </TouchableOpacity>
-              </View>
+              </View> */}
               <ContainerView
                 style={{
                   ...position,

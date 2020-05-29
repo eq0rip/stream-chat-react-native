@@ -225,7 +225,10 @@ export const MessageSimple = themed(
        * */
       onLongPress: PropTypes.func,
       /**
+       * @param {Component} thisArg Reference to MessageContent component
        * @param action refers to action pressed by the user in the reaction picker
+       * @param message Message object which was long pressed
+       * @param e       Event object for onLongPress event
        */
       handleCustomAction: PropTypes.func,
       /**
