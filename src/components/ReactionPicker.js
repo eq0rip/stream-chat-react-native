@@ -130,9 +130,19 @@ export const ReactionPicker = themed(
               leftAlign={Boolean(rpLeft)}
               activeOpacity={1}
             >
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  height: 65,
+                  width: '100%',
+                }}
+              >
                 <TouchableOpacity onPress={() => alert('done')}>
-                  <Text>asdfjkkjf</Text>
+                  <Text>modallllll</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => alert('heres')}>
+                  <Text>modallllll</Text>
                 </TouchableOpacity>
               </View>
               <ContainerView
