@@ -225,6 +225,10 @@ export const MessageSimple = themed(
        * */
       onLongPress: PropTypes.func,
       /**
+       * @param action refers to action pressed by the user in the reaction picker
+       */
+      handleCustomAction: PropTypes.func,
+      /**
        * Handler to delete a current message.
        */
       handleDelete: PropTypes.func,
@@ -411,6 +415,7 @@ export const MessageSimple = themed(
         reactionPickerVisible: this.state.reactionPickerVisible,
         openReactionPicker: this.openReactionPicker,
         dismissReactionPicker: this.dismissReactionPicker,
+        handleCustomAction: this.handleCustomAction,
         alignment,
         groupStyles: hasReactions ? ['bottom'] : groupStyles,
       };

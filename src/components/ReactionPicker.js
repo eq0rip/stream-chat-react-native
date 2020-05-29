@@ -104,6 +104,7 @@ export const ReactionPicker = themed(
         rpTop,
         rpRight,
         supportedReactions,
+        handleCustomAction,
       } = this.props;
 
       if (!reactionPickerVisible) return null;
@@ -138,10 +139,10 @@ export const ReactionPicker = themed(
                   width: '100%',
                 }}
               >
-                <TouchableOpacity onPress={() => alert('done')}>
+                <TouchableOpacity onPress={() => handleCustomAction('forward')}>
                   <Text>modallllll</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => alert('heres')}>
+                <TouchableOpacity onPress={() => handleCustomAction('reply')}>
                   <Text>modallllll</Text>
                 </TouchableOpacity>
               </View>

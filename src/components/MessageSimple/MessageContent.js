@@ -502,6 +502,7 @@ class MessageContent extends React.PureComponent {
       FileAttachmentGroup,
       t,
       tDateTimeParser,
+      handleCustomAction,
     } = this.props;
 
     const Attachment = this.props.Attachment;
@@ -622,6 +623,7 @@ class MessageContent extends React.PureComponent {
               hideReactionOwners={hideReactionOwners}
               openReactionPicker={openReactionPicker}
               dismissReactionPicker={dismissReactionPicker}
+              handleCustomAction={handleCustomAction}
               message={message}
               alignment={alignment}
               offset={{

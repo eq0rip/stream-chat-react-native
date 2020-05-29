@@ -127,6 +127,7 @@ export class ReactionPickerWrapper extends React.PureComponent {
       openReactionPicker,
       hideReactionCount,
       hideReactionOwners,
+      handleCustomAction,
     } = this.props;
     return (
       <TouchableOpacity
@@ -138,6 +139,7 @@ export class ReactionPickerWrapper extends React.PureComponent {
         {this.props.children}
         <ReactionPicker
           {...this.props}
+          handleCustomAction={handleCustomAction}
           reactionPickerVisible={reactionPickerVisible}
           handleReaction={handleReaction}
           latestReactions={message.latest_reactions}
