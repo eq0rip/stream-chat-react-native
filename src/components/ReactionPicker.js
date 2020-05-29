@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Modal, TouchableOpacity, Text } from 'react-native';
+import { View, Modal } from 'react-native';
 import { themed } from '../styles/theme';
 import PropTypes from 'prop-types';
 
@@ -55,7 +55,6 @@ export const ReactionPicker = themed(
       hideReactionOwners: PropTypes.bool,
       reactionPickerVisible: PropTypes.bool,
       handleDismiss: PropTypes.func,
-      handleCustomAction: PropTypes.func,
       handleReaction: PropTypes.func,
       latestReactions: PropTypes.array,
       reactionCounts: PropTypes.object,
