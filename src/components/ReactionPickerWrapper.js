@@ -91,8 +91,6 @@ export class ReactionPickerWrapper extends React.PureComponent {
           Math.round(Dimensions.get('window').width) -
           (x + width + offset.right);
         const isRtl = I18nManager.isRTL ? true : false;
-        console.log('--current alignment--', alignment);
-        console.log('--right  left--', { leffft, righttt });
         this.setState({
           rpTop: y - 60 + offset.top,
           rpLeft:
