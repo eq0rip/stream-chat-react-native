@@ -13,6 +13,14 @@ import styled from '@stream-io/styled-components';
 import { Avatar } from './Avatar';
 import { emojiData } from '../utils';
 
+import arrowRightIcon from '../images/icons/chat-arrow-right.png';
+import arrowLeftIcon from '../images/icons/chat-arrow-left.png';
+import starIcon from '../images/icons/chat-star.png';
+import replyIcon from '../images/icons/chat-reply.png';
+import forwardIcon from '../images/icons/chat-forward.png';
+import shareIcon from '../images/icons/chat-share.png';
+import deleteIcon from '../images/icons/chat-delete.png'
+
 const Container = styled.TouchableOpacity`
   flex: 1;
   align-items: ${({ leftAlign }) => (leftAlign ? 'flex-start' : 'flex-end')};
@@ -162,8 +170,8 @@ export const ReactionPicker = themed(
                     <Image
                       source={
                         I18nManager.isRTL
-                          ? require('./../images/icons/chat-arrow-right.png')
-                          : require('./../images/icons/chat-arrow-left.png')
+                          ? arrowRightIcon
+                          : arrowLeftIcon
                       }
                       resizeMode="contain"
                       style={{ width: 25, height: 25 }}
@@ -180,14 +188,14 @@ export const ReactionPicker = themed(
                     <Image
                       resizeMode="contain"
                       style={{ width: 25, height: 25, marginHorizontal: 10 }}
-                      source={require('./../images/icons/chat-reply.png')}
+                      source={replyIcon}
                     />
                   </TouchableOpacity>
                   <TouchableOpacity onPress={() => handleCustomAction('star')}>
                     <Image
                       resizeMode="contain"
                       style={{ width: 25, height: 25, marginHorizontal: 10 }}
-                      source={require('./../images/icons/chat-star.png')}
+                      source={starIcon)}
                     />
                   </TouchableOpacity>
                   <TouchableOpacity
@@ -196,7 +204,7 @@ export const ReactionPicker = themed(
                     <Image
                       resizeMode="contain"
                       style={{ width: 25, height: 25, marginHorizontal: 10 }}
-                      source={require('./../images/icons/chat-delete.png')}
+                      source={deleteIcon}
                     />
                   </TouchableOpacity>
                   <TouchableOpacity
@@ -205,7 +213,7 @@ export const ReactionPicker = themed(
                     <Image
                       resizeMode="contain"
                       style={{ width: 25, height: 25, marginHorizontal: 10 }}
-                      source={require('./../images/icons/chat-forward.png')}
+                      source={forwardIcon}
                     />
                   </TouchableOpacity>
                   {showShare && (
@@ -215,7 +223,7 @@ export const ReactionPicker = themed(
                       <Image
                         resizeMode="contain"
                         style={{ width: 25, height: 25, marginHorizontal: 10 }}
-                        source={require('./../images/icons/chat-share.png')}
+                        source={shareIcon}
                       />
                     </TouchableOpacity>
                   )}
