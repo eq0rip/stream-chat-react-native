@@ -19,7 +19,7 @@ import starIcon from '../images/icons/chat-star.png';
 import replyIcon from '../images/icons/chat-reply.png';
 import forwardIcon from '../images/icons/chat-forward.png';
 import shareIcon from '../images/icons/chat-share.png';
-import deleteIcon from '../images/icons/chat-delete.png'
+import deleteIcon from '../images/icons/chat-delete.png';
 
 const Container = styled.TouchableOpacity`
   flex: 1;
@@ -169,9 +169,7 @@ export const ReactionPicker = themed(
                   <TouchableOpacity onPress={() => handleCustomAction('back')}>
                     <Image
                       source={
-                        I18nManager.isRTL
-                          ? arrowRightIcon
-                          : arrowLeftIcon
+                        I18nManager.isRTL ? arrowRightIcon : arrowLeftIcon
                       }
                       resizeMode="contain"
                       style={{ width: 25, height: 25 }}
@@ -195,7 +193,7 @@ export const ReactionPicker = themed(
                     <Image
                       resizeMode="contain"
                       style={{ width: 25, height: 25, marginHorizontal: 10 }}
-                      source={starIcon)}
+                      source={starIcon}
                     />
                   </TouchableOpacity>
                   <TouchableOpacity
