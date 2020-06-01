@@ -625,10 +625,10 @@ class MessageContent extends React.PureComponent {
               dismissReactionPicker={dismissReactionPicker}
               message={message}
               handleCustomAction={(action) => {
-                console.log('heree from stream', action);
-                console.log('mssg', message);
-                console.log('this', this);
-                console.log('handleCa', this.props.handleCustomAction);
+                // console.log('heree from stream', action);
+                // console.log('mssg', message);
+                // console.log('this', this);
+                // console.log('handleCa', this.props.handleCustomAction);
                 this.props.handleCustomAction(this, message, action);
                 dismissReactionPicker();
               }}
@@ -722,7 +722,19 @@ class MessageContent extends React.PureComponent {
               channel={channel}
             />
           ) : null}
-          {MessageFooter && <MessageFooter {...this.props} />}
+          {MessageFooter && (
+            <MessageFooter
+              {...this.props}
+              handleCustomAction={(action) => {
+                // console.log('heree from stream', action);
+                // console.log('mssg', message);
+                // console.log('this', this);
+                // console.log('handleCa', this.props.handleCustomAction);
+                this.props.handleCustomAction(this, message, action);
+                dismissReactionPicker();
+              }}
+            />
+          )}
           {!MessageFooter && showTime ? (
             <MetaContainer>
               <MetaText alignment={alignment}>
