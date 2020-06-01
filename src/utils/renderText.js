@@ -40,7 +40,7 @@ export const renderText = (message, styles) => {
     ...defaultMarkdownStyles,
     ...styles,
   };
-  console.log('---markdownstyles---', markdownStyles);
+  // console.log('---markdownstyles---', markdownStyles);
   return (
     <Markdown mergeStyle={true} styles={markdownStyles}>
       {newText}
