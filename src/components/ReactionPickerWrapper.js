@@ -97,17 +97,15 @@ export class ReactionPickerWrapper extends React.PureComponent {
           rpTop: y - 60 + offset.top,
           rpLeft:
             alignment === 'left' && isRtl
-              ? Math.round(Dimensions.get('window').width) -
-                (x + width + offset.right)
+              ? 60
               : alignment === 'left' && !isRtl
-              ? x - 10 + offset.left
+              ? 60
               : null,
           rpRight:
             alignment === 'right' && isRtl
               ? x - 10 + offset.left
               : alignment === 'right' && !isRtl
-              ? Math.round(Dimensions.get('window').width) -
-                (x + width + offset.right)
+              ? 60
               : null,
         });
       });
@@ -142,7 +140,7 @@ export class ReactionPickerWrapper extends React.PureComponent {
           showShare={
             message &&
             message.attachments.length > 0 &&
-            message.attachments[0].type == 'image'
+            message.attachments[0].type === 'image'
               ? true
               : false
           }
