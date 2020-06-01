@@ -629,7 +629,7 @@ class MessageContent extends React.PureComponent {
                 console.log('mssg', message);
                 console.log('this', this);
                 console.log('handleCa', this.props.handleCustomAction);
-                this.props.handleCustomAction.bind(this, this, message, action);
+                this.props.handleCustomAction(this, message, action);
               }}
               alignment={alignment}
               offset={{
