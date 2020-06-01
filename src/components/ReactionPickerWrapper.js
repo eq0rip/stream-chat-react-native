@@ -142,7 +142,7 @@ export class ReactionPickerWrapper extends React.PureComponent {
           showShare={
             message &&
             message.attachments.length > 0 &&
-            message.attachments[0].type == 'image'
+            message.attachments[0].type === 'image'
               ? true
               : false
           }
