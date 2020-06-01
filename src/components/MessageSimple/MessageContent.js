@@ -626,6 +626,9 @@ class MessageContent extends React.PureComponent {
               message={message}
               handleCustomAction={(action) => {
                 console.log('heree', action);
+                console.log('mssg', message);
+                console.log('this', this);
+                console.log('handleCa', this.props.handleCustomAction);
                 this.props.handleCustomAction.bind(this, this, message, action);
               }}
               alignment={alignment}
