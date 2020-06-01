@@ -128,7 +128,7 @@ export const ReactionPicker = themed(
       if (!reactionPickerVisible) return null;
 
       const position = {
-        marginTop: rpTop,
+        marginTop: rpTop - 65,
       };
 
       if (rpLeft) position.marginLeft = rpLeft;
@@ -172,7 +172,7 @@ export const ReactionPicker = themed(
                         I18nManager.isRTL ? arrowRightIcon : arrowLeftIcon
                       }
                       resizeMode="contain"
-                      style={{ width: 25, height: 25 }}
+                      style={{ width: 30, height: 30, marginHorizontal: 15 }}
                     />
                   </TouchableOpacity>
                 </View>
