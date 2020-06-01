@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@stream-io/styled-components';
-import iconAddAttachment from '../images/icons/chat-attachment.png';
+import iconAddAttachment from '../images/icons/plus-outline.png';
 import { themed } from '../styles/theme';
 import PropTypes from 'prop-types';
 
