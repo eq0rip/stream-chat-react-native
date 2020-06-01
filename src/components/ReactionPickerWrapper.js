@@ -86,21 +86,7 @@ export class ReactionPickerWrapper extends React.PureComponent {
     const { alignment, offset } = this.props;
     if (this.messageContainer) {
       this.messageContainer.measureInWindow((x, y) => {
-        const leffft =
-          alignment === 'left' && isRtl
-            ? 60
-            : alignment === 'left' && !isRtl
-            ? 60
-            : null;
-        const righttt =
-          alignment === 'right' && isRtl
-            ? x - 10 + offset.left
-            : alignment === 'right' && !isRtl
-            ? 60
-            : null;
         const isRtl = I18nManager.isRTL ? true : false;
-        console.log('--current alignment--', alignment);
-        console.log('--right  left--', { leffft, righttt });
         this.setState({
           rpTop: y - 60 + offset.top,
           rpLeft:
