@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@stream-io/styled-components';
 import iconEdit from '../images/icons/icon_edit.png';
-import iconSendNewMessage from '../images/icons/icon_new_message.png';
+import iconSendNewMessage from '../images/icons/chat-send.png';
 import { themed } from '../styles/theme';
 import PropTypes from 'prop-types';
 
