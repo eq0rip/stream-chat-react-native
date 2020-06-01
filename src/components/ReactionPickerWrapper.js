@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { TouchableOpacity, Dimensions, I18nManager } from 'react-native';
+import { TouchableOpacity, I18nManager } from 'react-native';
 
 import { ReactionPicker } from './ReactionPicker';
 import { emojiData } from '../utils';
@@ -85,11 +85,19 @@ export class ReactionPickerWrapper extends React.PureComponent {
   _setReactionPickerPosition = () => {
     const { alignment, offset } = this.props;
     if (this.messageContainer) {
-      this.messageContainer.measureInWindow((x, y, width) => {
-        const leffft = x - 10 + offset.left;
+      this.messageContainer.measureInWindow((x, y) => {
+        const leffft =
+          alignment === 'left' && isRtl
+            ? 60
+            : alignment === 'left' && !isRtl
+            ? 60
+            : null;
         const righttt =
-          Math.round(Dimensions.get('window').width) -
-          (x + width + offset.right);
+          alignment === 'right' && isRtl
+            ? x - 10 + offset.left
+            : alignment === 'right' && !isRtl
+            ? 60
+            : null;
         const isRtl = I18nManager.isRTL ? true : false;
         console.log('--current alignment--', alignment);
         console.log('--right  left--', { leffft, righttt });
@@ -97,17 +105,15 @@ export class ReactionPickerWrapper extends React.PureComponent {
           rpTop: y - 60 + offset.top,
           rpLeft:
             alignment === 'left' && isRtl
-              ? Math.round(Dimensions.get('window').width) -
-                (x + width + offset.right)
+              ? 60
               : alignment === 'left' && !isRtl
-              ? x - 10 + offset.left
+              ? 60
               : null,
           rpRight:
             alignment === 'right' && isRtl
               ? x - 10 + offset.left
               : alignment === 'right' && !isRtl
-              ? Math.round(Dimensions.get('window').width) -
-                (x + width + offset.right)
+              ? 60
               : null,
         });
       });
