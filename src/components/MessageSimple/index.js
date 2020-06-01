@@ -316,6 +316,7 @@ export const MessageSimple = themed(
       readOnly: PropTypes.bool,
       /** Disables the message UI. Which means, message actions, reactions won't work. */
       disabled: PropTypes.bool,
+      handlCustomAction: PropTypes.func,
     };
 
     static defaultProps = {

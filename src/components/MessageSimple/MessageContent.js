@@ -372,6 +372,7 @@ class MessageContent extends React.PureComponent {
     readOnly: PropTypes.bool,
     /** Disables the message UI. Which means, message actions, reactions won't work. */
     disabled: PropTypes.bool,
+    handleCustomAction: PropTypes.func,
   };
 
   static defaultProps = {
@@ -623,6 +624,9 @@ class MessageContent extends React.PureComponent {
               openReactionPicker={openReactionPicker}
               dismissReactionPicker={dismissReactionPicker}
               message={message}
+              handleCustomAction={(action) =>
+                this.props.handleCustomAction.bind(this, this, message, action)
+              }
               alignment={alignment}
               offset={{
                 top: 25,

@@ -61,6 +61,7 @@ export const ReactionPicker = themed(
       rpTop: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       rpRight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       supportedReactions: PropTypes.array,
+      handleCustomAction: PropTypes.func,
     };
 
     static defaultProps = {
@@ -104,6 +105,7 @@ export const ReactionPicker = themed(
         rpTop,
         rpRight,
         supportedReactions,
+        handleCustomAction,
       } = this.props;
 
       if (!reactionPickerVisible) return null;
@@ -130,6 +132,13 @@ export const ReactionPicker = themed(
               leftAlign={Boolean(rpLeft)}
               activeOpacity={1}
             >
+              <View
+                style={{ backgroundColor: 'white', height: 65, width: '100%' }}
+              >
+                <TouchableOpacity onPress={() => handleCustomAction('forward')}>
+                  <Text>forward</Text>
+                </TouchableOpacity>
+              </View>
               <ContainerView
                 style={{
                   ...position,

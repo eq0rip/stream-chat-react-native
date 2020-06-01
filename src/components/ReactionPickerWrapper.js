@@ -64,6 +64,7 @@ export class ReactionPickerWrapper extends React.PureComponent {
     emojiData,
     hideReactionCount: false,
     hideReactionOwners: false,
+    handleCustomAction: PropTypes.func,
   };
 
   constructor(props) {
@@ -139,6 +140,7 @@ export class ReactionPickerWrapper extends React.PureComponent {
         <ReactionPicker
           {...this.props}
           reactionPickerVisible={reactionPickerVisible}
+          handleCustomAction={this.props.handleCustomAction}
           handleReaction={handleReaction}
           latestReactions={message.latest_reactions}
           reactionCounts={message.reaction_counts}
