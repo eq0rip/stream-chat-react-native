@@ -625,11 +625,12 @@ class MessageContent extends React.PureComponent {
               dismissReactionPicker={dismissReactionPicker}
               message={message}
               handleCustomAction={(action) => {
-                console.log('heree', action);
-                console.log('mssg', message);
-                console.log('this', this);
-                console.log('handleCa', this.props.handleCustomAction);
+                // console.log('heree', action);
+                // console.log('mssg', message);
+                // console.log('this', this);
+                // console.log('handleCa', this.props.handleCustomAction);
                 this.props.handleCustomAction(this, message, action);
+                dismissReactionPicker();
               }}
               alignment={alignment}
               offset={{

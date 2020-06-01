@@ -139,6 +139,13 @@ export class ReactionPickerWrapper extends React.PureComponent {
         {this.props.children}
         <ReactionPicker
           {...this.props}
+          showShare={
+            message &&
+            message.attachments.length > 0 &&
+            message.attachments[0].type == 'image'
+              ? true
+              : false
+          }
           reactionPickerVisible={reactionPickerVisible}
           handleCustomAction={this.props.handleCustomAction}
           handleReaction={handleReaction}

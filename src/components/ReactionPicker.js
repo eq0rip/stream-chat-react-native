@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Modal, Text, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Modal,
+  TouchableOpacity,
+  Image,
+  I18nManager,
+} from 'react-native';
 import { themed } from '../styles/theme';
 import PropTypes from 'prop-types';
 
@@ -62,9 +68,11 @@ export const ReactionPicker = themed(
       rpRight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       supportedReactions: PropTypes.array,
       handleCustomAction: PropTypes.func,
+      showShare: PropTypes.bool,
     };
 
     static defaultProps = {
+      showShare: false,
       hideReactionCount: false,
       hideReactionOwners: false,
       supportedReactions: emojiData,
@@ -106,6 +114,7 @@ export const ReactionPicker = themed(
         rpRight,
         supportedReactions,
         handleCustomAction,
+        showShare,
       } = this.props;
 
       if (!reactionPickerVisible) return null;
@@ -124,20 +133,93 @@ export const ReactionPicker = themed(
           transparent
           animationType="fade"
           onShow={() => {}}
-          onRequestClose={handleDismiss}
+          onRequestClose={() => {
+            handleDismiss();
+            handleCustomAction('back');
+          }}
         >
           {reactionPickerVisible && (
             <Container
-              onPress={handleDismiss}
+              onPress={() => {
+                handleDismiss();
+                handleCustomAction('back');
+              }}
               leftAlign={Boolean(rpLeft)}
               activeOpacity={1}
             >
               <View
-                style={{ backgroundColor: 'white', height: 65, width: '100%' }}
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  backgroundColor: 'white',
+                  height: 65,
+                  width: '100%',
+                  justifyContent: 'space-between',
+                }}
               >
-                <TouchableOpacity onPress={() => handleCustomAction('forward')}>
-                  <Text>forward</Text>
-                </TouchableOpacity>
+                <View>
+                  <TouchableOpacity onPress={() => handleCustomAction('back')}>
+                    <Image
+                      source={
+                        I18nManager.isRTL
+                          ? require('./../images/icons/chat-arrow-right.png')
+                          : require('./../images/icons/chat-arrow-left.png')
+                      }
+                      resizeMode="contain"
+                      style={{ width: 25, height: 25 }}
+                    />
+                  </TouchableOpacity>
+                </View>
+                <View
+                  style={{
+                    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
+                    alignItems: 'center',
+                  }}
+                >
+                  <TouchableOpacity onPress={() => handleCustomAction('reply')}>
+                    <Image
+                      resizeMode="contain"
+                      style={{ width: 25, height: 25, marginHorizontal: 10 }}
+                      source={require('./../images/icons/chat-reply.png')}
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => handleCustomAction('star')}>
+                    <Image
+                      resizeMode="contain"
+                      style={{ width: 25, height: 25, marginHorizontal: 10 }}
+                      source={require('./../images/icons/chat-star.png')}
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => handleCustomAction('delete')}
+                  >
+                    <Image
+                      resizeMode="contain"
+                      style={{ width: 25, height: 25, marginHorizontal: 10 }}
+                      source={require('./../images/icons/chat-delete.png')}
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => handleCustomAction('forward')}
+                  >
+                    <Image
+                      resizeMode="contain"
+                      style={{ width: 25, height: 25, marginHorizontal: 10 }}
+                      source={require('./../images/icons/chat-forward.png')}
+                    />
+                  </TouchableOpacity>
+                  {showShare && (
+                    <TouchableOpacity
+                      onPress={() => handleCustomAction('share')}
+                    >
+                      <Image
+                        resizeMode="contain"
+                        style={{ width: 25, height: 25, marginHorizontal: 10 }}
+                        source={require('./../images/icons/chat-share.png')}
+                      />
+                    </TouchableOpacity>
+                  )}
+                </View>
               </View>
               <ContainerView
                 style={{
