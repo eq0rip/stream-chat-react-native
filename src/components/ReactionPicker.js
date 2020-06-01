@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Modal } from 'react-native';
+import { View, Modal, Text, TouchableOpacity } from 'react-native';
 import { themed } from '../styles/theme';
 import PropTypes from 'prop-types';
 
