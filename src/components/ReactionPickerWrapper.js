@@ -139,9 +139,7 @@ export class ReactionPickerWrapper extends React.PureComponent {
               : false
           }
           reactionPickerVisible={reactionPickerVisible}
-          handleCustomAction={(action) =>
-            this.props.handleCustomAction(this, message, action)
-          }
+          handleCustomAction={this.props.handleCustomAction}
           handleReaction={handleReaction}
           latestReactions={message.latest_reactions}
           reactionCounts={message.reaction_counts}
