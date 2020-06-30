@@ -42,19 +42,13 @@ export const renderText = (message, styles) => {
   };
   console.log('---markdownstyles render text---', markdownStyles);
   return (
-    <Markdown mergeStyle={true} styles={markdownStyles}>
+    <Markdown mergeStyle={false} styles={markdownStyles}>
       {newText}
     </Markdown>
   );
 };
 
 const defaultMarkdownStyles = {
-  body: {
-    color: 'red',
-  },
-  text: {
-    color: 'yellow',
-  },
   link: {
     color: 'blue',
     textDecorationLine: 'underline',
