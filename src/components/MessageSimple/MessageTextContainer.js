@@ -62,7 +62,7 @@ export const MessageTextContainer = withTheme((props) => {
   const markdownStyless = props.theme
     ? props.theme.message.content.markdown
     : {};
-  const textColorMessage = alignment == 'left' ? '#000000' : '#ffffff';
+  const textColorMessage = alignment === 'left' ? '#000000' : '#ffffff';
   const markdownStyles = {
     ...markdownStyless,
     // body: { color: 'red' },
