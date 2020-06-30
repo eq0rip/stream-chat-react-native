@@ -62,7 +62,8 @@ export const MessageTextContainer = withTheme((props) => {
   const markdownStyless = props.theme
     ? props.theme.message.content.markdown
     : {};
-  const textColorMessage = alignment === 'left' ? '#000000' : '#ffffff';
+  const textColorMessage = alignment === 'left' ? 'blue' : 'grey';
+  console.log('text contatiner', markdownStyless);
   const markdownStyles = {
     ...markdownStyless,
     // body: { color: 'red' },
@@ -72,6 +73,7 @@ export const MessageTextContainer = withTheme((props) => {
     // span: { color: 'green' },
     // paragraph: { color: 'blue' },
   };
+  console.log('text contatiner new------------', markdownStyles);
   return (
     <React.Fragment>
       <TextContainer
