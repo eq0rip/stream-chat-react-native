@@ -42,7 +42,7 @@ export const renderText = (message, styles) => {
   };
   // console.log('---markdownstyles---', markdownStyles);
   return (
-    <Markdown mergeStyle={true} styles={markdownStyles}>
+    <Markdown mergeStyle={true} style={markdownStyles}>
       {newText}
     </Markdown>
   );
